@@ -1,4 +1,4 @@
-package com.trvl.core.model.embeddables;
+package com.trvl.core.model.embeddable;
 
 import javax.persistence.Embeddable;
 

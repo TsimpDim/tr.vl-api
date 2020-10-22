@@ -1,7 +1,7 @@
 package com.trvl.core.model;
 
-import com.trvl.core.model.embeddables.RouteData;
-import com.trvl.core.model.embeddables.Units;
+import com.trvl.core.model.embeddable.RouteData;
+import com.trvl.core.model.embeddable.Units;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
