@@ -13,4 +13,20 @@ public class Token {
     @JoinColumn(name = "id")
     @OneToOne
     private User user;
+
+    public Token(String token, User user) {
+        this.token = token;
+        this.user = user;
+    }
+
+    public Token() {
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public User getUser() {
+        return user;
+    }
 }

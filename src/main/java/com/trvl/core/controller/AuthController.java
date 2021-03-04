@@ -1,5 +1,6 @@
 package com.trvl.core.controller;
 
+import com.trvl.core.dto.LogInRequestDTO;
 import com.trvl.core.dto.SignUpRequestDTO;
 import com.trvl.core.service.AuthService;
 import com.trvl.core.service.UserService;
@@ -27,5 +28,13 @@ public class AuthController {
     public ResponseEntity<String> signUp(@Valid @RequestBody SignUpRequestDTO signupRequestDTO) {
         authService.signUpUser(signupRequestDTO);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping("login")
+    public ResponseEntity<String> login(@Valid @RequestBody LogInRequestDTO loginRequestDTO) {
+        String token = authService.loginUser(loginRequestDTO);
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("bearer", token)
+                .body(token);
     }
 }
