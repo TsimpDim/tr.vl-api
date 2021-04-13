@@ -39,11 +39,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
             .antMatchers("/sign-up").permitAll()
             .antMatchers("/login").permitAll()
+            .antMatchers("/logout").permitAll()
             .anyRequest().authenticated()
             .and()
             .logout()
-            .logoutUrl("/logout")
-            .deleteCookies("JSESSIONID");
+            .logoutUrl("/logout");
     }
 
     @Autowired
